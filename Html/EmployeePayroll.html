@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Employee payroll form</title>
+        <script defer src="..\JavaScript\EmployeePayroll.js"></script>
+        <script defer src="..\JavaScript\employeedetail.js"></script>
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="..\CSS\Employee.css" media="all"/>
@@ -20,12 +23,13 @@
                 </div>
             </div>
         </header>
-        <div class="form-content">
-            <form class="form" action="#" onsubmit="save();return false">
+        <div id="formId" class="form-content">
+            <form class="form" action="#"  onrest="resetForm()" onsubmit="save()">
                 <div class="form-head">Employee payroll form</div>
                 <div class="row-content">
                     <label class="label text" for="name">Name</label>
-                    <input class="input" type="text" id="name"  name="name" placeholder="Your name.." required>                    
+                    <input class="input" type="text" id="name"  name="name" placeholder="Your name.." required>  
+                    <error-output class="text-error" for="text"></error-output>                  
                 </div>
                 <div class="row-content">
                     <label class="label text" for="profile">Profile image</label>
@@ -64,15 +68,15 @@
                 <div class="row-content">
                     <label class="label text" for="department">Department</label>
                     <div>
-                        <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR">
+                        <input class="checkbox" type="checkbox" id="hr" name="department" value="HR">
                         <label class="text" for="hr">HR</label>
-                        <input class="checkbox" type="checkbox" id="sales" name="sales" value="Sales">
+                        <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales">
                         <label class="text" for="sales">Sales</label>
-                        <input class="checkbox" type="checkbox" id="finance" name="finance" value="Finance">
+                        <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance">
                         <label class="text" for="finance">Finance</label>
-                        <input class="checkbox" type="checkbox" id="engineer" name="engineer" value="Engineer">
+                        <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer">
                         <label class="text" for="engineer">Engineer</label>
-                        <input class="checkbox" type="checkbox" id="others" name="others" value="Others">
+                        <input class="checkbox" type="checkbox" id="others" name="department" value="Others">
                         <label class="text" for="others">Others</label>
                     </div>
                 </div>
@@ -153,6 +157,6 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </div>       
     </body>
 </html>
