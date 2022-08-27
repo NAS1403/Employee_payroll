@@ -4,8 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Employee payroll form</title>
-        <script defer src="..\JavaScript\EmployeePayroll.js"></script>
         <script defer src="..\JavaScript\employeedetail.js"></script>
+        <script defer src="..\JavaScript\new_home.js"></script>  
+        <script defer src="..\JavaScript\utility.js"></script> 
+        <script defer src="..\JavaScript\site_properties.js"></script>   
+        <script defer src="..\JavaScript\EmployeePayroll.js"></script>   
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +27,7 @@
             </div>
         </header>
         <div id="formId" class="form-content">
-            <form class="form" action="#"  onrest="resetForm()" onsubmit="save()">
+            <form class="form" action="#"  onrest="resetForm()" onsubmit="save(event)">
                 <div class="form-head">Employee payroll form</div>
                 <div class="row-content">
                     <label class="label text" for="name">Name</label>
@@ -87,7 +90,7 @@
                     <output class="salary-output text" for="salary">400000</output>                    
                 </div>
                 <div class="row-content">
-                    <label class="label text" for="startDate">Start Date</label>
+                    <label class="label text" id="date" for="startDate">Start Date</label>
                     <div>
                         <select name="Day" id="day">
                             <option value="1">1</option>
@@ -137,6 +140,10 @@
                             <option value="Dec">December</option>
                         </select>
                         <select name="Year" id="year">
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
                             <option value="2020">2020</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
@@ -144,6 +151,7 @@
                             <option value="2016">2016</option>
                         </select>
                     </div>
+                    <error-output class="date-error" for="startDate"></error-output>    
                 </div>
                 <div class="row-content">
                     <label for="notes" class="label text">Notes</label>
